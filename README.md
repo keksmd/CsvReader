@@ -3,7 +3,7 @@
    ```git clone https://github.com/keksmd/CsvReader.git```
 3) Open csvReader catalog
    ```cd CsvReader```
-4) Start service
+4) Start service (you need 8080 port opened)
    ```docker-compose up -d```
 5) Mount your_file.csv into container
     ```docker cp path/to/your/file/your_file.csv csvreader-csv-reader-1:/your_file.csv```
