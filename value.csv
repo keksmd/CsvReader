@@ -1,0 +1,54 @@
+CODE001,Product A,Description for Product A,20230101123045
+CODE002,Product B,Description for Product B,20230202143030
+CODE003,Product C,Description for Product C,20230303153015
+CODE004,Product D,Description for Product D,20230404163000
+CODE005,Product E,Description for Product E,20230505173030
+CODE006,Product F,Description with commas,20230606183045
+CODE007,Product G,"Description, with a comma inside quotes",20230707193030
+CODE008,Product H,"Description with ""escaped quotes""",20230808103015
+CODE009,Product I,Description for Product I,20230909113000
+CODE010,Product J,Description for Product J,20231010123030
+CODE001,Product A updated,Description for Product A updated,20230101123045
+CODE001,Product A,Description for Product A,20230101123045
+CODE002,Product B,Description for Product B,20230202143030
+CODE003,Product C,Description for Product C,20230303153015
+CODE004,Product D,Description for Product D,20230404163000
+CODE005,Product E,Description for Product E,20230505173030
+CODE006,Product F,Description with commas,20230606183045
+CODE007,Progduct G,"Description, with a comma inside quotes",20230707193030
+CODE0008,Product H,"Description with ""escaped quotes""",20230808103015
+CODE0009,Product I,Description for Product I,20230909113000
+CODE0010,Product J,Descgription for Product J,20231010123030
+CODE0001,Product A updated,Description for Product A updated,20230101123045
+CODE0001,Product A,Description for Product A,20230101123045
+CODE002,Product B,Description for Product B,20230202143030
+CODE003,Product C,Description for Product C,20230303153015
+CODE004,Prodgtuct D,Description for Product D,20230404163000
+CODE005,Product E,Descriptgtion for Product E,20230505173030
+CODE8007,Product G,"Description, with a comma inside quotes",20230707193030
+CODE8008,Prgtoduct H,"Description with ""escaped quotes""",20230808103015
+CODE8009,Product I,Descrgtiption for Product I,20230909113000
+CODE8010,Product J,Description for Product J,20231010123030
+CODE8001,Product A updated,Description for Product A updated,20230101123045
+CODE001,Produgtct A,Description for Product A,20230101123045
+CODE002,Product B,Descrgtiption for Product B,20230202143030
+CODE003,Product C,Description for Product C,20230303153015
+CODE004,Prodguct D,Descriptgtion for Product D,20230404163000
+CODE005,Product E,Description for Product E,20230505173030
+CODE006,Product F,Description with commas,20230606183045
+CODE007,Prodgyuct G,"Description, with a comma inside quotes",20230707193030
+COD9E008,Produffrct H,"Description with ""escaped quotes""",20230808103015
+3CO9DE009,Product I,Description for Product I,20230909113000
+3CO9DE010,Profrduct J,Description for Product J,20231010123030
+3CO9DE001,Product A updated,Description for Product A updated,20230101123045
+3CO9DE001,Product4r A,Descrigtgtption for Product A,20230101123045
+3CODE002,Product B,Description for Product B,20230202143030
+C5ODE003,Product C,Description for Product C,20230303153015
+C5ODE004,Producfrt D,Description for Product D,20230404163000
+C5ODE005,Product E,Description for Product E,20230505173030
+C5ODE006,Producfrt F,Description with commas,20230606183045
+C57ODE007,Product G,"Description, with a comma inside quotes",20230707193030
+CO7DE008,Product H,"Description with ""escaped quotes""",20230808103015
+CO7DE009,Product I,Description for Product I,20230909113000
+CO7DE010,Product J,Description for Product J,20231010123030
+CO7DE001,Product A updated,Description for Product A updated,20230101123046
