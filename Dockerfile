@@ -13,7 +13,6 @@ ENV POSTGRES_USER=postgres
 ENV POSTGRES_PASSWORD=postgres
 ENV POSTGRES_DB=csv-db
 ENV POSTGRES_HOST=postgres
-COPY --from=builder /application/value.csv value.csv
 COPY --from=builder /application/target/*.jar app.jar
 RUN java -Djarmode=layertools -jar app.jar extract
 
@@ -26,7 +25,7 @@ ENV POSTGRES_HOST=postgres
 RUN yum -y install shadow-utils
 RUN useradd -ms /bin/bash spring-user
 USER spring-user
-COPY --from=layers /value.csv ./
+
 COPY --from=layers /application/dependencies/ ./
 COPY --from=layers /application/spring-boot-loader/ ./
 COPY --from=layers /application/snapshot-dependencies/ ./
