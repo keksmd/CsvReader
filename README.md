@@ -5,7 +5,7 @@
    ```cd CsvReader```
 4) Start service (you need 8080 port opened)
    ```docker-compose up -d```
-5) Mount your_file.csv into container
+5) Mount your_file.csv into container (or you may use pre-uploaded value.csv)
     ```docker cp path/to/your/file/your_file.csv csvreader-csv-reader-1:/your_file.csv```
 6) Start reading file by http-request, also you may configure size of uploading chunk and number of threads
   ```
