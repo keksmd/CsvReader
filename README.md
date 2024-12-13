@@ -2,14 +2,11 @@
 1) Clone repository
    ```git clone https://github.com/keksmd/CsvReader.git```
 3) Open csvReader catalog
-   ```cd csvReader```
+   ```cd CsvReader```
 4) Start service
    ```docker-compose up -d```
-5) Add file to running container
-    ```docker ps```
-   (find id of container csvReader)
-   mount your_file.csv in container
-    ```docker cp your_file.txt your_container_id:/your_file.csv```
+5) Mount your_file.csv into container
+    ```docker cp path/to/your/file/your_file.csv csvreader-csv-reader-1:/your_file.csv```
 6) Start reading file by http-request, also you may configure size of uploading chunk and number of threads
   ```
 curl -G "http://localhost:8080/csv/reader" \
