@@ -12,5 +12,5 @@
 curl -G "http://localhost:8080/csv/reader" \
   --data-urlencode "filePath=your_file.csv" \
     --data-urlencode "chunkSize=1" \
-    --data-urlencode "threadCount=1"
+    --data-urlencode "threadCount=2"
 
