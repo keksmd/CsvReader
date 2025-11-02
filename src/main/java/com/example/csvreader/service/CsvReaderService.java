@@ -8,7 +8,6 @@ import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvValidationException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 
 @Slf4j
 @RequiredArgsConstructor
@@ -29,13 +29,12 @@ public class CsvReaderService {
     private static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
     private final EntityLoaderService entityLoaderService;
     private final CSVParser parser;
-  private final ThreadPoolTaskExecutor executorServiceConfig;
+    private final ThreadPoolTaskExecutor executorServiceConfig;
 
     public void loadCsv(String filePath, int chunkSize) throws IOException, CsvValidationException {
         List<EntityDto> chunk = new ArrayList<>(chunkSize);
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath));
-             CSVReader csvReader = new CSVReaderBuilder(br).withCSVParser(parser).build();){
-             ExecutorService executorService = executorServiceConfig.getThreadPoolExecutor() ;
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath)); CSVReader csvReader = new CSVReaderBuilder(br).withCSVParser(parser).build();) {
+            ExecutorService executorService = executorServiceConfig.getThreadPoolExecutor();
 
             String[] line;
             while ((line = csvReader.readNext()) != null) {
@@ -52,18 +51,19 @@ public class CsvReaderService {
                     dto.setModifiedOn(LocalDateTime.now());
                     chunk.add(dto);
                 } catch (Exception e) {
-                    log.error("Ошибка парсинга : {}",e.getLocalizedMessage());
+                    log.error("Ошибка парсинга : {}", e.getLocalizedMessage());
                     continue;
                 }
                 if (chunk.size() >= chunkSize) {
                     List<EntityDto> chunkToProcess = new ArrayList<>(chunk);
-                    executorService.submit(() ->entityLoaderService.loadEntityList(chunkToProcess));
+                    Future <?> f = executorService.submit(() -> entityLoaderService.loadEntityList(chunkToProcess));
+                    
                     chunk.clear();
                 }
             }
             if (!chunk.isEmpty()) {
                 List<EntityDto> chunkToProcess = new ArrayList<>(chunk);
-                executorService.submit(() ->entityLoaderService.loadEntityList(chunkToProcess));
+                executorService.submit(() -> entityLoaderService.loadEntityList(chunkToProcess));
             }
         }
     }
