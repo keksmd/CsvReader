@@ -1,16 +1,19 @@
-# How to use
-1) Clone repository
-   ```git clone https://github.com/keksmd/CsvReader.git```
-3) Open csvReader catalog
-   ```cd CsvReader```
-4) Start service (you need 8080 port opened)
-   ```docker-compose up -d```
-5) Mount your_file.csv into container (or you may use pre-uploaded value.csv)
-    ```docker cp path/to/your/file/your_file.csv csvreader-csv-reader-1:/your_file.csv```
-6) Start reading file by http-request, also you may configure size of uploading chunk and number of threads
-  ```
-curl -G "http://localhost:8080/csv/reader" \
-  --data-urlencode "filePath=your_file.csv" \
-    --data-urlencode "chunkSize=1" \
-    --data-urlencode "threadCount=2"
+# CsvReader
 
+CSV ingestion API with chunking, concurrency, Docker, and PostgreSQL.
+
+## What it does
+- Accepts CSV input and processes it in configurable chunks.
+- Demonstrates backend data-processing flow with testable boundaries.
+- Shows a practical ingest-and-persist pipeline.
+
+## Stack
+Java, Spring Boot, PostgreSQL, Docker.
+
+## Why it matters
+A small repo, but it still signals real backend thinking: parsing, batching, persistence, and containerized execution.
+
+## Future work
+- Validation and error reporting
+- Metrics
+- Streaming mode
